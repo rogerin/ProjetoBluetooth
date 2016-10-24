@@ -1,0 +1,26 @@
+<ion-view title="Bluetooth">
+  <ion-content class="padding">
+
+	<div class="list">
+		<a class="item" ng-click="connect(b.id)" ng-repeat="b in devices" >
+			<h2>{{b.name}}</h2>
+			<p>MAC: {{b.id}} / class: {{b.class}}</p>
+		</a>
+	</div>
+
+	<div class="list">
+		<p>
+			Pressao: {{dados.p}}
+		</p>
+		<p>
+			FC: {{dados.f}}
+		</p>
+		<p>
+			Temperatura: {{dados.t}}
+		</p>
+
+	</div>
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,90 @@
+<ion-view title="Teste">
+  <ion-content class="padding">
+  	<div class="list" ng-hide="conectado">
+  		<h2> Selecione o aparelho </h2>
+		<a class="item" ng-click="connect(b.id)" ng-repeat="b in devices" >
+			<h2>{{b.name}}</h2>
+			<p>MAC: {{b.id}} / class: {{b.class}}</p>
+		</a>
+	</div>
+	<div ng-show="conectado">
+		<p>
+			<h3>Aluno: {{aluno.nome}}</h3>
+			<h4 ng-show="!testeIniciado">Estamos conectados, mas não iniciamos a avaliação.</h4>
+			<h4 ng-show="testeIniciado">Salvando dados...</h4>
+
+		</p>
+		<div class="row" ng-hide="criaTeste">
+			<div class="col">
+				<button class="button button-full icon-left ion-play  button-balanced"  ng-click="criarTeste()">
+					Iniciar Teste!!
+				</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<h2>
+					<i class="icon ion-arrow-swap"></i>
+						{{dados.p}} Pa
+				</h2>
+			</div>
+			<div class="col">
+				<h2>
+					<i class="icon ion-heart"></i>
+					 {{dados.f}} bpm
+				</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h2>
+					<i class="icon ion-thermometer"></i>
+					{{dados.t}} Cº
+				</h2>
+			</div>
+			<div class="col">
+				<h2>
+					<i class="icon ion-ios7-stopwatch-outline"></i>
+						<timer autostart="false">{{hours}}:{{minutes}}:{{seconds}}<br/><small>{{millis}}</small></timer>
+				</h2>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col">
+				<canvas id="myChart" responsive="true"></canvas>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div id="legendDiv"></div>
+			</div>
+		</div>
+		<div class="row" ng-show="criaTeste">
+			<div class="col">
+
+				<button class="button button-full icon-left ion-pause button-calm"  ng-click="pausarTeste()" ng-show="testeIniciado">
+					Pausar Teste!!
+				</button>
+
+				<button class="button button-full icon-left ion-play button-calm"  ng-click="playTeste()" ng-show="!testeIniciado">
+					Continuar Teste!!
+				</button>
+
+				
+			</div>
+			<div class="col">
+
+				<button class="button button-full icon-left ion-stop button-assertive"  ng-click="stopTeste()">
+					Finalizar Teste!!
+				</button>
+			</div>
+
+		</div>
+
+	
+	</div>
+  </ion-content>
+</ion-view>

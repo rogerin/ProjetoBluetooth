@@ -1,0 +1,26 @@
+<ion-view title="Alunos">
+
+
+  <ion-content class="padding">
+  	<p>Total de registros {{registros.length}} cadastrados.</p>
+	
+
+      <div class="row row-background-positive">
+        <div class="col">Pressão</div>
+        <div class="col">FC</div>
+        <div class="col">CO2</div>
+        <div class="col">temperatura</div>
+        <div class="col">Tempo</div>
+
+      </div>
+
+      <div class="row" ng-repeat="registro in registros" ng-class-odd="'row-background-stable'" ng-class-even="''">
+        <div class="col">{{registro.pressao}}</div>
+        <div class="col">{{registro.fc}}</div>
+        <div class="col">{{registro.co2}}</div>
+        <div class="col">{{registro.temp}}</div>
+        <div class="col">{{registro.date | yTime}}</div>
+      </div>
+
+  </ion-content>
+</ion-view>

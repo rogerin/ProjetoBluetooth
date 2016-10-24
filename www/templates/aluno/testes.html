@@ -1,0 +1,20 @@
+<ion-view title="Testes">
+
+
+  <ion-content class="padding">
+  	<p>Total de {{testes.length}} cadastrados.</p>
+	<div class="list list-inset">
+		<label class="item item-input">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Buscar" data-ng-model="busca">
+		</label>
+	</div>
+	<div class="list"  data-ng-init="listarTestes()">
+		<a class="item" href="#/tab/aluno/teste/{{t.id}}" ng-repeat="t in testes |  filter : busca">
+			<!-- <h2>{{t.nome}} <span class="badge badge-assertive">0</span></h2> -->
+				{{t.date | date:'dd/MM/yyyy HH:mm:ss' }} - {{t.nome}}
+			
+		</a>
+	</div>
+  </ion-content>
+</ion-view>

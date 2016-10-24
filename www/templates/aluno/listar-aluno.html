@@ -1,0 +1,23 @@
+<ion-view title="Alunos">
+
+
+  <ion-content class="padding">
+  	<p>Total de {{alunos.length}} cadastrados.</p>
+	<div class="list list-inset">
+		<label class="item item-input">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Buscar" data-ng-model="busca">
+		</label>
+	</div>
+	
+	<div class="list"  data-ng-init="listarAlunos()">
+		<a class="item item-avatar"  href="#/tab/aluno/{{aluno.id}}" ng-repeat="aluno in alunos |  filter : busca">
+			<img ng-src="img/camera-icon.png">
+			<h2>{{aluno.nome}} <!-- <span class="badge badge-assertive">0</span>--></h2> 
+			<p>
+				{{aluno.nascimento }} - E-mail: {{aluno.email}}
+			</p>
+		</a>
+	</div>
+  </ion-content>
+</ion-view>

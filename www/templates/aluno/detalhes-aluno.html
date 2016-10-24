@@ -1,0 +1,91 @@
+<ion-view title="Detalhes">
+  <ion-content class="padding">
+
+<!--
+	<h2>Detalhes do aluno</h2>
+
+ 	<div class="list">
+		<a class="item item-avatar" href="#">
+			<img ng-src="http://holder.js/40x40/social">
+			<h2>{{aluno.nome}} / Testes: 0</h2>
+			<p>
+				ID: {{aluno.id}} - Nascimento: {{aluno.nascimento }} <br/>
+				Email: {{aluno.email}}
+			</p>
+		</a>
+	</div> -->
+
+<div class="list card">
+
+	<div class="item item-avatar">
+		<!-- <img ng-src="img/camera-icon.png" holder-fix> -->
+		<h2>{{aluno.nome}} <span class="badge badge-assertive">{{testes.length }}</span></h2>
+		<p>{{aluno.nascimento }} - <a href="mailto:{{aluno.email}}?subject=Limia APP" "email me">{{aluno.email}}</a></p>
+	</div>
+
+	<div class="item item-body">
+		<!-- <img class="full-image" ng-src="img/no_image.jpg" holder-fix /> <br/> -->
+		<a nav-clear  class="button icon-left ion-ios7-bolt-outline button-balanced activated button-block"  href="#/iniciar/{{aluno.id}}">
+			Iniciar Teste
+		</a>
+		<!-- <a class="button icon-left ion-gear-a button-block" href="#">
+			Editar Cadastro
+		</a> -->
+		<br/>
+
+<!-- 		<div class="card">
+			<div class="item item-text-wrap">
+				Data: <strong>10/23/2014 </strong><br/>
+				Detalhes sobre os testes ficam em resumo neste campo. </br>
+				Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros.
+			</div>
+		</div>
+		<div class="card">
+			<div class="item item-text-wrap">
+				Data: <strong>10/23/2014 </strong><br/>
+				Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no mé, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. 
+			</div>
+		</div>
+	
+		<p>
+			
+			<a href="#" class="subdued">0 Testes</a>
+			<a href="#" class="subdued">2 Comentarios</a>
+		</p> -->
+
+		<h2>Testes</h2>
+		<div class="list">
+			<a class="item item-icon-right" href="#/tab/aluno/teste/{{teste.id}}"  ng-repeat="teste in testes" >
+				{{teste.id}} - Data {{teste.date | date:'dd/MM/yyyy HH:mm:ss' }}
+				<i class="icon ion-arrow-right-c"></i>
+			</a>
+		</div>	
+
+		<div class="item tabs tabs-secondary tabs-icon-left">
+		<a class="tab-item assertive" href="#">
+			<i class="icon ion-trash-a"></i>
+			Deletar Aluno
+		</a>
+		<a class="tab-item dark" href="#">
+			<i class="icon ion-document"></i>
+			Resetar Testes
+		</a>
+		<a class="tab-item balanced" href="#/iniciar/{{aluno.id}}">
+			<i class="icon ion-ios7-bolt-outline"></i>
+			Iniciar Teste
+		</a>
+	</div>
+	</div>
+
+
+
+
+
+
+	
+
+</div>
+
+
+  </ion-content>
+</ion-view>
